@@ -8,12 +8,12 @@ python scripts/estimate_depth.py --image data/city.jpg --model DPT_Large --outpu
 python scripts/batch_depth_estimation.py --input-dir data/ --extensions .jpg --model DPT_Large --save-raw --save-colored --save-vis  
 
 ## this converts the depth map to a grid map (the streets are 1 meaning it can be traveled, the city blocks are 0)
-python scripts/convert_depth_to_grid.py --input results/raw_depth/city_depth.npy --grid-size 1024 --threshold 0.1  --save-visualization
+python scripts/convert_depth_to_grid.py --input results/raw_depth/city_depth.npy --grid-size 1024 --threshold 0.1 --save-visualization
 
 ## this tests the path planning (A*)
 ### I think instead of saying A* is our control, we can we use A* to make sure the map can be traversed. 
 ### so they dont realize how terrible the RL agent is. 
-python -m scripts.test_path_planning --grid results/grid_maps/city_depth_grid.npy --invert-grid --max-grid-size 128
+python -m scripts.test_path_planning --grid results/grid_maps/city_depth_grid.npy --max-grid-size 128
 
 ## this trains the RL agent
 ### it will take about 5 minutes for 64x64 grid

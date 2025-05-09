@@ -48,13 +48,13 @@ def parse_args() -> argparse.Namespace:
         "--threshold", 
         type=float, 
         default=0.6, 
-        help="Threshold factor for obstacle detection. Values below this threshold are considered obstacles. Range [0, 1]. Defaults to 0.6."
+        help="Threshold for obstacle detection. Values above this threshold are considered obstacles. Range [0, 1]. Defaults to 0.6."
     )
     
     parser.add_argument(
         "--smoothing", 
         action="store_true", 
-        help="Apply Gaussian smoothing to the depth map before conversion."
+        help="Apply Gaussian smoothing to the depth map before conversion (only used for cost grids, not binary grids)."
     )
     
     parser.add_argument(
@@ -191,10 +191,9 @@ def main() -> None:
         grid = depth_to_grid(
             depth_map=depth_map,
             grid_size=args.grid_size,
-            threshold_factor=args.threshold,
-            smoothing=args.smoothing,
-            kernel_size=args.kernel_size,
-            invert=args.invert
+            threshold=args.threshold,
+            invert=args.invert,
+            kernel_size=args.kernel_size
         )
         
         # Find optimal start and goal positions
