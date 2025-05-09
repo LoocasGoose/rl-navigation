@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env/
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Model weights
+*.pth
+*.pt
+*.h5
+*.ckpt
+
+# Output files
+results/
+*.log
+
+# Large data files
+data/images/*
+data/depth_maps/*
+data/grid_maps/*
+!data/images/.gitkeep
+!data/depth_maps/.gitkeep
+!data/grid_maps/.gitkeep
+
+# Misc
+.DS_Store
+Thumbs.db 
