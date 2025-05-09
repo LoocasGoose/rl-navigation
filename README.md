@@ -349,7 +349,3 @@ for next_pos in path[1:]:  # Skip the first position (starting point)
 from src.visualization.env_visualizer import visualize_trajectory
 visualize_trajectory(env, trajectory, title="A* Path Following")
 ```
-
-## License
-
-MIT 
