@@ -12,7 +12,7 @@ Note: It will take some time and ~1GB to download the model that converts image 
 
 
 
-------Some  more markdown shenanigans------
+## ------Some  more markdown shenanigans------
 
 This project implements a reinforcement learning system that:
 1. Generates depth maps from single RGB images
